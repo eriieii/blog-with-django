@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -89,6 +89,14 @@ AUTHENTICATION_BACKENDS = [
 
 #site id
 SITE_ID = 1
+
+ACCOUNT_USER_MODEL_USERNAME_FIELD =  None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+# APPLY CUSTOM USER
+AUTH_USER_MODEL = 'users.Users'
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
